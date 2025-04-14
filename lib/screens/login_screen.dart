@@ -9,29 +9,30 @@ class LoginScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Padding(
-        padding: const EdgeInsets.all(30),
-        child: Center(
+      body: Center(
+        child: Padding(
+          padding: const EdgeInsets.all(30),
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
               Image.asset('assets/logo.png', height: 100),
-              const SizedBox(height: 20),
+              const SizedBox(height: 30),
               TextField(
                 controller: usernameController,
                 decoration: const InputDecoration(labelText: 'Username'),
               ),
+              const SizedBox(height: 15),
               TextField(
                 controller: passwordController,
                 obscureText: true,
                 decoration: const InputDecoration(labelText: 'Password'),
               ),
-              const SizedBox(height: 20),
+              const SizedBox(height: 25),
               ElevatedButton(
                 onPressed: () {
                   if (usernameController.text == 'admin' &&
                       passwordController.text == 'Pass@123') {
-                    Get.to(() => HomeScreen());
+                    Get.off(() => HomeScreen());
                   } else {
                     Get.snackbar("Login Failed", "Invalid credentials");
                   }

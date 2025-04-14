@@ -15,13 +15,28 @@ class ProductDetailScreen extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Image.network(product.thumbnail, height: 250),
-            const SizedBox(height: 10),
+            ClipRRect(
+              borderRadius: BorderRadius.circular(10),
+              child: Image.network(
+                product.thumbnail,
+                height: 250,
+                width: double.infinity,
+                fit: BoxFit.cover,
+              ),
+            ),
+            const SizedBox(height: 20),
             Text(product.description),
             const SizedBox(height: 10),
-            Text('Price: \$${product.price}'),
-            Text('Rating: ${product.rating}'),
+            Text(
+              'Price: \$${product.price}',
+              style: const TextStyle(color: Colors.green),
+            ),
+            Text(
+              'Rating: ${product.rating}',
+              style: const TextStyle(color: Colors.amber),
+            ),
             Text('Category: ${product.category}'),
+            Text('Brand: ${product.brand}'),
           ],
         ),
       ),

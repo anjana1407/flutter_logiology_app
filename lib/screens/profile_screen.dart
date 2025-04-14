@@ -40,10 +40,12 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     profileImage == null ? const Icon(Icons.add_a_photo) : null,
               ),
             ),
+            const SizedBox(height: 20),
             TextField(
               controller: usernameController,
               decoration: const InputDecoration(labelText: 'New Username'),
             ),
+            const SizedBox(height: 10),
             TextField(
               controller: passwordController,
               obscureText: true,
